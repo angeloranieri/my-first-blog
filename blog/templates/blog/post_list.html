@@ -8,17 +8,15 @@
             <h1>Angelo's Blog</h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>published: 25.03.22</time>
-            <h2>My first blog</h2>
-            <p>nice to be able to create a blog from scratch with django</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 25.03.22</time>
-            <h2>My second blog</h2>
-            <p>learning new things is always useful</p>
-        </article>
+        
     </body>
 </html>
 
